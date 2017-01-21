@@ -7,8 +7,14 @@ function textBox.load()
   textBox.width = 1000
   textBox.height = 200
   textBox.txt = {
-    [0] = line1,
-    [1] = line2
+    [0] = {
+      [0] = "player",
+      [1] = line1
+    },
+    [1] = {
+      [0] = "monster",
+      [1] = line2
+    }
   }
   textBox.line_nbr = 0
 end
@@ -16,7 +22,7 @@ end
 function textBox.next()
   love.graphics.setColor(255, 0, 0, 255)
   textBox.line_nbr = textBox.line_nbr + 1
-  love.graphics.print(textBox.txt[textBox.line_nbr], textBox.x + 5, textBox.y + 5)
+  love.graphics.print(textBox.txt[textBox.line_nbr][1], textBox.x + 5, textBox.y + 5)
   love.graphics.setColor(255, 255, 255, 255)
 end
 
@@ -28,6 +34,11 @@ end
 
 function textBox.print()
   love.graphics.setColor(255, 0, 0, 255)
-  love.graphics.print(textBox.txt[textBox.line_nbr], textBox.x + 5, textBox.y + 5)
+  love.graphics.setFont(font)
+  love.graphics.print(textBox.txt[textBox.line_nbr][1], textBox.x + 400, textBox.y + 5)
   love.graphics.setColor(255, 255, 255, 255)
+end
+
+function textBox.get_line_speaker()
+  return textBox.txt[textBox.line_nbr][0]
 end
