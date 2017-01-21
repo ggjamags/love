@@ -1,20 +1,22 @@
 require "src/player"
 require "src/button"
 require "src/textBox"
-require "src/monster"
+require "src/monsterA"
+require "src/monsterB"
 
 function love.load()
   -- background
   love.graphics.setBackgroundColor(255, 255, 255)
   -- perso
-  monster.load()
+  monsterA.load()
+  monsterB.load()
   player.load()
   -- misc
   textBox.load()
   font = love.graphics.newFont("res/font/AlexandriaFLF-Bold.ttf", 20)
   cave_background = love.graphics.newImage("res/img/Decor_grotte.png")
   textBox.draw()
-  game_state = 1;
+  game_state = 1
 end
 
 function love.update(dt)
@@ -28,8 +30,11 @@ function love.draw()
     if (textBox.get_line_speaker() == "player") then
       player.draw()
     end
-    if (textBox.get_line_speaker() == "monster") then
-      monster.draw()
+    if (textBox.get_line_speaker() == "monsterA") then
+      monsterA.draw()
+    end
+    if (textBox.get_line_speaker() == "monsterB") then
+      monsterB.draw()
     end
     textBox.print()
   end

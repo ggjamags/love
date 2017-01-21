@@ -1,2 +1,2 @@
-line1 = "line1"
-line2 = "line2"
+line1 = "Hooo Mais qu'est-ce qui se passe ? Tu n'as pas l'air bien !"
+line2 = "Je vais très bien casse toi !"

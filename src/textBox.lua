@@ -12,18 +12,21 @@ function textBox.load()
       [1] = line1
     },
     [1] = {
-      [0] = "monster",
+      [0] = "monsterB",
       [1] = line2
     }
   }
   textBox.line_nbr = 0
+  textBox.max_line = 1
 end
 
 function textBox.next()
-  love.graphics.setColor(255, 0, 0, 255)
-  textBox.line_nbr = textBox.line_nbr + 1
-  love.graphics.print(textBox.txt[textBox.line_nbr][1], textBox.x + 5, textBox.y + 5)
-  love.graphics.setColor(255, 255, 255, 255)
+  if (textBox.line_nbr < textBox.max_line) then
+    love.graphics.setColor(255, 0, 0, 255)
+    textBox.line_nbr = textBox.line_nbr + 1
+    love.graphics.print(textBox.txt[textBox.line_nbr][1], textBox.x + 5, textBox.y + 5)
+    love.graphics.setColor(255, 255, 255, 255)
+  end
 end
 
 function textBox.draw()
