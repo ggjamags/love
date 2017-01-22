@@ -1,6 +1,3 @@
-require "src/textBox"
-require "src/monsterA"
-require "src/monsterB"
 require "src/room0"
 
 function love.load()
@@ -8,9 +5,6 @@ function love.load()
   love.graphics.setBackgroundColor(255, 255, 255)
   -- rooms
   room0.load()
-  -- perso
-  monsterA.load()
-  monsterB.load()
   -- misc
   font = love.graphics.newFont("res/font/AlexandriaFLF-Bold.ttf", 20)
   game_state = 0
