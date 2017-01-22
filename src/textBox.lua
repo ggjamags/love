@@ -1,23 +1,13 @@
 require "src/scene1"
 textBox = {}
 
-function textBox.load()
+function textBox.load(max)
   textBox.x = 0
   textBox.y = 400
   textBox.width = 1000
   textBox.height = 200
-  textBox.txt = {
-    [0] = {
-      [0] = "player",
-      [1] = line1
-    },
-    [1] = {
-      [0] = "monsterB",
-      [1] = line2
-    }
-  }
   textBox.line_nbr = 0
-  textBox.max_line = 1
+  textBox.max_line = max
 end
 
 function textBox.next()
