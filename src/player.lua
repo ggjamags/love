@@ -11,7 +11,7 @@ function player.load()
   player.spriteNeutre = love.graphics.newImage("res/img/Neutre.png")
   player.spriteTriste = love.graphics.newImage("res/img/Tristesse.png")
   player.spriteJoie = love.graphics.newImage("res/img/Joie.png")
-  player.feel = "none"
+  player.feeling = "tristesse"
 end
 
 function player.draw(feeling)

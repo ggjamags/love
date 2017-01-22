@@ -6,37 +6,52 @@ function room1Line.load()
   room1Line.width = 1000
   room1Line.height = 200
   room1Line.line_nbr = 0
-  room1Line.max_line = 3
+  room1Line.max_line = {
+    ['peur'] = 0,
+    ['colere'] = 0,
+    ['joie'] = 0,
+    ['tristesse'] = 3
+  }
   room1Line.txt = {
-    [0] = {
-      [0] = "monsterB",
-      [1] = "...",
-      [2] = "ferme"
+    ['peur'] = {
+      [0] = {}
     },
-    [1] = {
-      [0] = "player",
-      [1] = "Hooo Mais qu'est-ce qui se passe ? Tu n'as pas l'air bien !",
-      [2] = "neutre"
+    ['colere'] = {
+      [0] = {}
     },
-    [2] = {
-      [0] = "monsterB",
-      [1] = "Je vais très bien casse toi !",
-      [2] = "ouvert"
+    ['joie'] = {
+      [0] = {}
     },
-    [3] = {
-      [0] = "player",
-      [1] = "Bon ok, t'es pas très sympa",
-      [2] = "triste"
+    ['tristesse'] = {
+      [0] = {
+        [0] = "monsterB",
+        [1] = "...",
+        [2] = "ferme"
+      },
+      [1] = {
+        [0] = "player",
+        [1] = "Hooo mais qu'est-ce qui se passe ? Tu n'as pas l'air bien !",
+        [2] = "neutre"
+      },
+      [2] = {
+        [0] = "monsterB",
+        [1] = "Je vais très bien casse toi !",
+        [2] = "ouvert"
+      },
+      [3] = {
+        [0] = "player",
+        [1] = "Bon ok, t'es pas très sympa",
+        [2] = "triste"
+      }
     }
-
   }
 end
 
-function room1Line.next()
-  if (room1Line.line_nbr < room1Line.max_line) then
+function room1Line.next(feeling)
+  if (room1Line.line_nbr < room1Line.max_line[feeling]) then
     love.graphics.setColor(255, 0, 0, 255)
     room1Line.line_nbr = room1Line.line_nbr + 1
-    love.graphics.print(room1Line.txt[room1Line.line_nbr][1], room1Line.x + 5, room1Line.y + 5)
+    love.graphics.print(room1Line.txt[feeling][room1Line.line_nbr][1], room1Line.x + 5, room1Line.y + 5)
     love.graphics.setColor(255, 255, 255, 255)
   end
 end
@@ -47,17 +62,17 @@ function room1Line.draw()
   love.graphics.setColor(255, 255, 255, 255)
 end
 
-function room1Line.print()
+function room1Line.print(feeling)
   love.graphics.setColor(255, 0, 0, 255)
   love.graphics.setFont(font)
-  love.graphics.print(room1Line.txt[room1Line.line_nbr][1], room1Line.x + 400, room1Line.y + 5)
+  love.graphics.print(room1Line.txt[feeling][room1Line.line_nbr][1], room1Line.x + 400, room1Line.y + 5)
   love.graphics.setColor(255, 255, 255, 255)
 end
 
-function room1Line.get_line_speaker()
+function room1Line.get_line_speaker(feeling)
   return {
-    [0] = room1Line.txt[room1Line.line_nbr][0],
-    [1] = room1Line.txt[room1Line.line_nbr][2]
+    [0] = room1Line.txt[feeling][room1Line.line_nbr][0],
+    [1] = room1Line.txt[feeling][room1Line.line_nbr][2]
   }
 end
 

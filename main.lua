@@ -21,7 +21,7 @@ function love.draw()
       room0.play(game_state)
     end
     if (current_room == 1) then
-      room1.play(game_state)
+      room1.play(game_state, player.feeling)
     end
 end
 
@@ -30,6 +30,6 @@ function love.mousepressed(x, y, button, istouch)
     room0.click(game_state)
   end
   if (current_room == 1) then
-    room1.click(game_state)
+    room1.click(game_state, player.feeling)
   end
 end
