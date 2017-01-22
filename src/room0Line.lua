@@ -40,3 +40,7 @@ end
 function room0Line.get_line_speaker()
   return room0Line.txt[room0Line.line_nbr][0]
 end
+
+function room0Line.reset()
+  room0Line.line_nbr = 0
+end
