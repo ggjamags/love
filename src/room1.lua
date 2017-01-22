@@ -1,6 +1,5 @@
 require "src/room1Line"
 require "src/player"
-require "src/monsterA"
 require "src/monsterB"
 
 room1 = {}
@@ -9,7 +8,6 @@ function room1.load()
   -- misc
   -- perso
   player.load()
-  monsterA.load()
   monsterB.load()
   -- room1
   room1Line.load()

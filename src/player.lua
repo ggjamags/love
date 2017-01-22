@@ -11,7 +11,9 @@ function player.load()
   player.spriteNeutre = love.graphics.newImage("res/img/Neutre.png")
   player.spriteTriste = love.graphics.newImage("res/img/Tristesse.png")
   player.spriteJoie = love.graphics.newImage("res/img/Joie.png")
-  player.feeling = "tristesse"
+  player.spritePeur = love.graphics.newImage("res/img/Peur.png")
+  player.spriteColere = love.graphics.newImage("res/img/Colere1.png")
+  player.feeling = "joie"
 end
 
 function player.draw(feeling)
@@ -23,6 +25,12 @@ function player.draw(feeling)
   end
   if (feeling == "joie") then
     love.graphics.draw(player.spriteJoie, player.x, player.y, player.r, player.sx, player.sy)
+  end
+  if (feeling == "peur") then
+    love.graphics.draw(player.spritePeur, player.x, player.y, player.r, player.sx, player.sy)
+  end
+  if (feeling == "colere") then
+    love.graphics.draw(player.spriteColere, player.x, player.y, player.r, player.sx, player.sy)
   end
 end
 

@@ -7,20 +7,57 @@ function room1Line.load()
   room1Line.height = 200
   room1Line.line_nbr = 0
   room1Line.max_line = {
-    ['peur'] = 0,
-    ['colere'] = 0,
-    ['joie'] = 0,
+    ['peur'] = 1,
+    ['colere'] = 1,
+    ['joie'] = 3,
     ['tristesse'] = 3
   }
   room1Line.txt = {
     ['peur'] = {
-      [0] = {}
+      [0] = {
+        [0] = "monsterB",
+        [1] = "...",
+        [2] = "ferme"
+      },
+      [1] = {
+        [0] = "player",
+        [1] = "!!!!",
+        [2] = "peur"
+      }
     },
     ['colere'] = {
-      [0] = {}
+      [0] = {
+        [0] = "monsterB",
+        [1] = "...",
+        [2] = "ferme"
+      },
+      [1] = {
+        [0] = "player",
+        [1] = "Meurs, meurs !",
+        [2] = "colere"
+      }
     },
     ['joie'] = {
-      [0] = {}
+      [0] = {
+        [0] = "monsterB",
+        [1] = "...",
+        [2] = "ferme"
+      },
+      [1] = {
+        [0] = "player",
+        [1] = "Hey, Monpoké ! Comment vas-tu ? Ca fait un bail !",
+        [2] = "joie"
+      },
+      [2] = {
+        [0] = "monsterB",
+        [1] = "Je suis lessivé, il faut que je dorme.",
+        [2] = "ferme"
+      },
+      [3] = {
+        [0] = "player",
+        [1] = "Ok, je te laisse dormir",
+        [2] = "neutre"
+      }
     },
     ['tristesse'] = {
       [0] = {
