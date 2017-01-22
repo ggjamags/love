@@ -12,7 +12,7 @@ function love.load()
   -- misc
   font = love.graphics.newFont("res/font/AlexandriaFLF-Bold.ttf", 20)
   game_state = 0
-  current_room = '1A'
+  current_room = '1'
 end
 
 function love.update(dt)

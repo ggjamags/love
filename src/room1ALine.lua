@@ -23,7 +23,7 @@ function room1ALine.load()
         [0] = "player",
         [1] = "Ho non! Encore un monstre ! *s'enfuit* ",
         [2] = "peur"
-      },
+      }
     },
     ['colere'] = {
       [0] = {
@@ -72,14 +72,14 @@ function room1ALine.load()
         [0] = "player",
         [1] = "Le requin marteau !",
         [2] = "joie"
-      },
+      }
     },
     ['tristesse'] = {
       [0] = {
         [0] = "monsterA",
         [1] = "Grrr...",
         [2] = "ouvert"
-      },
+      }
     }
   }
 end
