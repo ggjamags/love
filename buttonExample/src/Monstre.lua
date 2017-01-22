@@ -1,8 +1,0 @@
---
--- Monstre
---
-
-Monstre = {
-   
-   
-}
