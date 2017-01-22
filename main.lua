@@ -12,9 +12,7 @@ function love.load()
   monsterA.load()
   monsterB.load()
   -- misc
-  textBox.load(room0Line.max_line)
   font = love.graphics.newFont("res/font/AlexandriaFLF-Bold.ttf", 20)
-  textBox.draw()
   game_state = 0
 end
 
@@ -25,32 +23,18 @@ end
 function love.draw()
     if (game_state == 0) then
       love.graphics.draw(room0.background, 0, 0)
-      textBox.draw()
-      if (textBox.get_line_speaker() == "player") then
+      room0Line.draw()
+      if (room0Line.get_line_speaker() == "player") then
         player.draw()
       end
-      if (textBox.get_line_speaker() == "monsterA") then
+      if (room0Line.get_line_speaker() == "monsterA") then
         monsterA.draw()
       end
-      if (textBox.get_line_speaker() == "monsterB") then
+      if (room0Line.get_line_speaker() == "monsterB") then
         monsterB.draw()
       end
-      textBox.print()
+      room0Line.print()
     end
---  if (game_state == 1) then
---    love.graphics.draw(cave_background, 0, 0)
---    textBox.draw()
---    if (textBox.get_line_speaker() == "player") then
---      player.draw()
---    end
---    if (textBox.get_line_speaker() == "monsterA") then
---      monsterA.draw()
---    end
---    if (textBox.get_line_speaker() == "monsterB") then
---      monsterB.draw()
---    end
---    textBox.print()
---  end
 end
 
 function love.mousepressed(x, y, button, istouch)

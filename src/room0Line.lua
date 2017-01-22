@@ -6,7 +6,7 @@ function room0Line.load()
   room0Line.width = 1000
   room0Line.height = 200
   room0Line.line_nbr = 0
-  room0Line.max_line = 1
+  room0Line.max_line = 0
   room0Line.txt = {
     [0] = {
       [0] = "player",
