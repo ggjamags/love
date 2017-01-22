@@ -1,41 +1,35 @@
 require "src/room0"
+require "src/room1"
 
 function love.load()
   -- background
   love.graphics.setBackgroundColor(255, 255, 255)
   -- rooms
   room0.load()
+  room1.load()
   -- misc
   font = love.graphics.newFont("res/font/AlexandriaFLF-Bold.ttf", 20)
   game_state = 0
+  current_room = 1
 end
 
 function love.update(dt)
-    player.update(dt)
 end
 
 function love.draw()
-    if (game_state == 0) then
-      love.graphics.draw(room0.background, 0, 0)
-      room0Line.draw()
-      if (room0Line.get_line_speaker() == "player") then
-        player.draw()
-      end
-      if (room0Line.get_line_speaker() == "monsterA") then
-        monsterA.draw()
-      end
-      if (room0Line.get_line_speaker() == "monsterB") then
-        monsterB.draw()
-      end
-      room0Line.print()
+    if (current_room == 0) then
+      room0.play(game_state)
+    end
+    if (current_room == 1) then
+      room1.play(game_state)
     end
 end
 
 function love.mousepressed(x, y, button, istouch)
-  if (game_state == 0) then
-    room0Line.next()
+  if (current_room == 0) then
+    room0.click(game_state)
   end
-  if (game_state == 1) then
-    textBox.next()
+  if (current_room == 1) then
+    room1.click(game_state)
   end
 end

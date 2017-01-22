@@ -10,7 +10,8 @@ function room0Line.load()
   room0Line.txt = {
     [0] = {
       [0] = "player",
-      [1] = "Quelle porte devrais-je ouvrir ?"
+      [1] = "Quelle porte devrais-je ouvrir ?",
+      [2] = "neutre"
     }
   }
 end
@@ -38,7 +39,10 @@ function room0Line.print()
 end
 
 function room0Line.get_line_speaker()
-  return room0Line.txt[room0Line.line_nbr][0]
+  return {
+    [0] = room0Line.txt[room0Line.line_nbr][0],
+    [1] = room0Line.txt[room0Line.line_nbr][2]
+  }
 end
 
 function room0Line.reset()
